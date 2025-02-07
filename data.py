@@ -1,6 +1,7 @@
 #coding=utf-8
 import sqlite3
 
+
 def create_datatable():
     connection = sqlite3.connect('data.db', timeout=20)
     cur = connection.cursor()
@@ -30,7 +31,6 @@ def content_num():
         return
 
 def user_reg(user_id):
-    connection = sqlite3.connect('data.db')
     cur = connection.cursor()
     query = f'SELECT user_id FROM users_base WHERE user_id = {user_id}'
     results = cur.execute(query).fetchone()
